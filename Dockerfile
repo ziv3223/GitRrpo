@@ -4,4 +4,4 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
 
 # הוסף את הפקודה שתרצה לבצע בזמן ההקמה.
-CMD [ "echo", "Hello, Docker!" ]
+ENTRYPOINT [ "echo", "Hello, Docker!" ]
