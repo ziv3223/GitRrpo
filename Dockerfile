@@ -1,7 +1,9 @@
-FROM ubuntu:latest
+FROM golang:latest
 
-# בצע עדכונים מערכתיים באמצעות הפקודות apt-get update ו-apt-get upgrade.
-RUN apt-get update && apt-get upgrade -y
+COPY . /app
 
-# הוסף את הפקודה שתרצה לבצע בזמן ההקמה.
-ENTRYPOINT [ "echo", "Hello, Docker!" ]
+WORKDIR /app
+
+RUN go build -o hangman
+
+CMD ["./hangman"]
